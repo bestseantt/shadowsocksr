@@ -20,8 +20,8 @@ RUN apk --no-cache add python \
     wget
 
 
-RUN wget -qO- --no-check-certificate https://github.com/bestseantt/shadowsocksr/archive/$BRANCH.tar.gz | tar -xzf - -C $WORK
-RUN mv shadowsocksr-$BRANCH suansuanru
+RUN wget -qO- --no-check-certificate https://github.com/bestseantt/shadowsocksr/archive/$BRANCH.tar.gz | tar -xzf - -C $WORK \
+&& mv $WORK/shadowsocksr-$BRANCH $WORK/suansuanru
 
 
 WORKDIR $WORK/suansuanru/shadowsocks
