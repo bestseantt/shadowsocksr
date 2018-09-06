@@ -20,10 +20,11 @@ RUN apk --no-cache add python \
     wget
 
 
-RUN wget -qO- --no-check-certificate https://github.com/bestseantt/shadowsocksr/archive/$BRANCH.tar.gz | tar -xzf - -C $WORK
+RUN wget -qO- --no-check-certificate https://github.com/bestseantt/shadowsocksr/archive/$BRANCH.tar.gz | tar -xzf - -C $WORK \
+    && mv shadowsocksr-$BRANCH suansuanru
 
 
-WORKDIR $WORK/shadowsocksr-$BRANCH/shadowsocks
+WORKDIR $WORK/suansuanru/shadowsocks
 
 
 EXPOSE $SERVER_PORT
