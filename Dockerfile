@@ -24,8 +24,10 @@ RUN mkdir -p $WORK && \
     wget -qO- --no-check-certificate https://github.com/bestseantt/shadowsocksr/archive/$BRANCH.tar.gz | tar -xzf - -C $WORK
 
 
-WORKDIR $WORK/shadowsocksr-$BRANCH/shadowsocksr
+WORKDIR $WORK/shadowsocksr-$BRANCH
 
+RUN sh initcfg.sh && \
+    sh setup_cymysql.sh
 
 EXPOSE $SERVER_PORT
 CMD python server.py -p $SERVER_PORT -k $PASSWORD -m $METHOD -O $PROTOCOL -o $OBFS -G $PROTOCOLPARAM
