@@ -8,7 +8,7 @@ A fast tunnel proxy that helps you bypass firewalls.
 
 ### Usage with Docker
 
-1. Edit "Dockerfile"
+1. Edit "Dockerfile",
     Set SERVER_PORT PASSWORD METHOD PROTOCOL PROTOCOLPARAM OBFS TRANSFER.
 2. docker run -d -p <port>:<SERVER_PORT> bestseantt/shadowsocksr
 
